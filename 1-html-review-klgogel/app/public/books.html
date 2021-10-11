@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>aboutme</title>
+
+
+      <!-- Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+      <link href="css/style.css" rel="stylesheet" type="text/css">
+
+  <script src="https://unpkg.com/vue@next"></script>
+
+  
+</head>
+
+
+
+<body>
+<header>
+
+
+  <div class = "navigationbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="index.html">Home</a>
+      <a class="navbar-brand" href="books.html">Books</a>
+      <a class="navbar-brand" href="mytravels.html">My Travels</a>
+    </nav>
+  </div>
+</header>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>My Favorite Books</title>
+    <link href="public/css/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+<main>
+    <h1>My Favorite Books</h1>
+    <div id="booksApp" class="container">
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">Author</th>
+              <th scope="col">Year Published</th>
+              <th scope="col">Publisher</th>
+              <th scope="col">Page Count</th>
+              <th scope="col">MSRP</th>
+            </tr>
+          </thead>
+          <tr v-for= "book in books">
+            <td>{{ book.bookTitle }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.yearPublished }}</td>
+            <td>{{ book.publisher }}</td>
+            <td>{{ book.pageCount }}</td>
+            <td>{{ prettyDollar(book.bookPrice) }}</td>
+          </tr>
+          
+        </table>
+    </div>
+
+  <script src="js/tablesort.min.js"></script>
+    <script>
+      new Tablesort(document.getElementById('myTable'));
+    </script>
+    <form action="confirmationpage.html" method = "POST" "col-lg-6">
+        Book Title<input type="text"> <br>
+        Author <input type = "text"> <br>
+        Year Published <input type = "text"> <br>
+        Publisher <input type = "text"> <br>
+        Page Number <input type = "text"> <br>
+        MSRP <input type = "text"> <br>
+        
+        Comments: <br>
+        <textarea> </textarea><br>
+
+        <input type="submit">
+
+    </form>
+</main>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+
+<script src="js/book.js"></script>
+
+</body>
+
+<footer>
+  <p> Jane Goodall | Phone: 800-555-1234 | 444 Four Circles Dr, Daytona, FL 32114</p>
+</footer>
+</html>
